@@ -1,0 +1,18 @@
+def max_collatz(num):
+    a = [num]
+    for item in a:
+
+        if item % 2 == 0:
+            a.append(int(item / 2))
+            if item / 2 == 1:
+                break
+        if item % 2 != 0:
+            a.append(int(item * 3 + 1))
+        if item / 2 == 1:
+            a.append(1)
+            break
+    return max(a)
+
+
+
+print(max_collatz(165))
